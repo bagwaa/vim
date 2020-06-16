@@ -1,5 +1,15 @@
 filetype plugin indent on
+
 colorscheme monokai
+" colorscheme hyper
+" let g:airline_theme='dark
+" colorscheme hyper
+" let g:airline_theme='night_owl'
+
+" light
+" colorscheme github
+" let g:airline_theme='papercolor'
+
 set nocompatible
 filetype on
 syntax on
@@ -10,6 +20,7 @@ set signcolumn=yes
 set hlsearch
 set incsearch
 set copyindent
+set preserveindent
 set number
 set autowrite
 set nowrap
@@ -47,6 +58,9 @@ nmap <Leader>v :e ~/.vimrc<cr>
 nmap <leader>s :w<cr>
 nmap <leader>ec :source %<CR>
 
+nmap <leader>sn :set invnumber<CR>
+nmap <leader>srn :set invrelativenumber<CR>
+
 nmap <leader>g :G<CR>
 
 noremap <Up> <Nop>
@@ -59,15 +73,24 @@ noremap <Right> <Nop>
 " noremap! <Left> <Nop>
 " noremap! <Right> <Nop>
 
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 imap <C-Space> <C-X><C-O>
 nmap <leader>x :bd<CR>
 
-nnoremap <silent> <Leader>gb :e#<CR> 
+nnoremap <silent> <Leader>gb :e#<CR>
 let g:ranger_map_keys = 0
 map <leader>r :Ranger<CR>
 
 let g:buffergator_suppress_keymaps=1
-nmap <leader>b :BuffergatorToggle<CR>
+nmap <leader>bb :BuffergatorToggle<CR>
+
+" Remove all whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.blade.php set ft=html
@@ -83,6 +106,7 @@ command! Mapso call fzf#vim#maps('o', 0)
 command! Mapsi call fzf#vim#maps('i', 0)
 command! Mapsv call fzf#vim#maps('v', 0)
 command! Mapsa call fzf#vim#maps('a', 0)
+command! Mapsb call fzf#vim#maps('b', 0)
 map <C-p> :Files<cr>
 
 set cmdheight=1
@@ -220,7 +244,7 @@ autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 " let g:php_cs_fixer_php_path = "php"
 let g:php_cs_fixer_rules = "@PSR2"
 let g:php_cs_fixer_cache = ".php_cs.cache"
-let g:php_cs_fixer_config_file = '.php_cs' 
+let g:php_cs_fixer_config_file = '.php_cs'
 
 let g:gitgutter_enabled = 1
 highlight GitGutterAdd ctermfg=Green
@@ -277,7 +301,7 @@ let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
 
 let g:peekaboo_window = 'vertical botright 80new'
-
+let test#strategy = "neovim"
 " Z + ENTER = Move Current Line to Top of the Window
 " SHIFT + 6 (caret^) = Go to the start of the line after blank space (indenting)
 "
@@ -291,9 +315,12 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'letorbi/vim-colors-modern-borland'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'whiteinge/diffconflicts'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sleuth'
 Plug 'jwalton512/vim-blade'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
@@ -308,6 +335,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'mattn/emmet-vim'
