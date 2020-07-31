@@ -1,0 +1,11 @@
+{
+    "explorer.file.autoReveal": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.width": 50,
+    "explorer.quitOnOpen": true,
+    "explorer.keyMappings": {
+        "<cr>": ["expandable?", "expand", "open"],
+        "v": "open:vsplit"
+    }
+}
