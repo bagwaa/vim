@@ -34,7 +34,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 imap jj <Esc>
 nmap <leader>l :set list!<CR>
-nmap <Leader>v :e ~/.vimrc<cr>
+nmap <Leader>vv :e ~/.vimrc<cr>
+nmap <Leader>v :vnew<cr>
 nmap <leader>s :w<cr>
 nmap <leader>sn :set invnumber<CR>
 nmap <leader>srn :set invrelativenumber<CR>
