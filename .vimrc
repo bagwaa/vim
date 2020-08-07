@@ -6,7 +6,6 @@ source ~/.vim/config/startify.vim
 source ~/.vim/config/git.vim
 source ~/.vim/config/undo.vim
 source ~/.vim/config/closetag.vim
-source ~/.vim/config/ranger.vim
 source ~/.vim/config/buffer.vim
 source ~/.vim/config/search.vim
 source ~/.vim/config/coc.vim
@@ -19,13 +18,7 @@ Plug 'vim-airline/vim-airline-themes'                               " a selectio
 Plug 'ryanoasis/vim-devicons'                                       " a selection of icons in nerdtree
 
 " Syntax based plugins
-Plug 'StanAngeloff/php.vim', {'for': 'php'}                         " php syntax
-Plug 'jwalton512/vim-blade'                                         " blade syntax
 Plug 'sheerun/vim-polyglot'                                         " syntax highlighting for tonnes of languages
-Plug 'pangloss/vim-javascript'                                      " javascript highlighting
-Plug 'leafgarland/typescript-vim'                                   " typescript highlighting
-Plug 'mxw/vim-jsx'                                                  " jsx highlighting
-Plug 'posva/vim-vue'                                                " vue highlighting
 
 " Project navigation based plugins
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " fuzzy search
@@ -33,7 +26,6 @@ Plug 'junegunn/fzf.vim'                                             " fuzzy sear
 Plug 'jeetsukumaran/vim-buffergator'                                " manage buffers
 Plug 'rbgrouleff/bclose.vim'                                        " close buffers easily
 Plug 'mhinz/vim-startify'                                           " show recent files on start up
-Plug 'francoiscabrol/ranger.vim'                                    " file navigation for the system
 Plug 'kshenoy/vim-signature'                                        " show marks in the gutter that we can jump to
 
 " Git based plugins

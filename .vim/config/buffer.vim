@@ -4,7 +4,7 @@ let g:buffergator_hsplit_size=10
 let g:buffergator_sort_regime="mru"
 
 nmap <leader>bb :BuffergatorToggle<CR>
-nmap <leader>x :bd<CR>
+nmap <leader>x :Bclose<CR>
 nmap <leader>bn :bn<CR>
 " Remove all whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
