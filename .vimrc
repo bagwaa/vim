@@ -10,6 +10,7 @@ source ~/.vim/config/buffer.vim
 source ~/.vim/config/search.vim
 source ~/.vim/config/coc.vim
 source ~/.vim/config/snippets.vim
+source ~/.vim/config/easymotion.vim
 
 call plug#begin('~/.vim/plugged')
 " Theme based plugins
@@ -27,6 +28,7 @@ Plug 'jeetsukumaran/vim-buffergator'                                " manage buf
 Plug 'rbgrouleff/bclose.vim'                                        " close buffers easily
 Plug 'mhinz/vim-startify'                                           " show recent files on start up
 Plug 'kshenoy/vim-signature'                                        " show marks in the gutter that we can jump to
+Plug 'easymotion/vim-easymotion'                                    " jump around easily
 
 " Git based plugins
 Plug 'airblade/vim-gitgutter'                                       " git changes in the gutter
