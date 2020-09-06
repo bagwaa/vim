@@ -20,6 +20,7 @@ Plug 'ryanoasis/vim-devicons'                                       " a selectio
 
 " Syntax based plugins
 Plug 'sheerun/vim-polyglot'                                         " syntax highlighting for tonnes of languages
+Plug 'machakann/vim-highlightedyank'
 
 " Project navigation based plugins
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " fuzzy search
@@ -46,7 +47,11 @@ Plug 'junegunn/vim-peekaboo'                                        " show conte
 Plug 'jiangmiao/auto-pairs'                                         " auto open and close pairs
 Plug 'SirVer/ultisnips'                                             " snippets manager
 
+" Debug
+Plug 'vim-vdebug/vdebug'                                            " debugging with vim
+
 " Completion based plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                     " code completion
-Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}                     " keep PHP pretty
+Plug 'dense-analysis/ale'                                           " linting
 call plug#end()
+
