@@ -6,6 +6,7 @@ let g:buffergator_sort_regime="mru"
 nmap <leader>bb :BuffergatorToggle<CR>
 nmap <leader>x :bd<CR>
 nmap <leader>bn :bn<CR>
+nmap <leader>r :bufdo e!<CR>                    " reload the current file from the disk
 
 " Remove all whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e

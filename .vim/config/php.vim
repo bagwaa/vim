@@ -1,14 +1,16 @@
 let g:ale_php_phpcs_executable='/Users/bagwaa/.composer/vendor/bin/phpcs'
 let g:ale_php_php_cs_fixer_executable='/Users/bagwaa/.composer/vendor/bin/php-cs-fixer'
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
 
 " ------------------------------------------------------------------------------
 " # Ale Settings
 " ------------------------------------------------------------------------------
 
-let g:ale_sign_error = '!!'
-let g:ale_sign_style_error = '!!'
-let g:ale_sign_warning = '!'
-let g:ale_sign_style_warning = '!'
+let g:ale_sign_error = '🤮'
+let g:ale_sign_style_error = '🤮'
+let g:ale_sign_warning = '🤮'
+let g:ale_sign_style_warning = '🤮'
 
 
 " ------------------------------------------------------------------------------

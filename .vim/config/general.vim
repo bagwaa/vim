@@ -28,6 +28,7 @@ set updatetime=100
 let g:peekaboo_window = 'vertical botright 80new'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/vendor/*,*/storage/*,*/cache/*,*/node_modules/*,*/bower_components/*
 let g:highlightedyank_highlight_duration = 350
+set list
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
