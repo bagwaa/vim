@@ -117,6 +117,11 @@ set fillchars+=vert:│
 " standards in PHP
 set colorcolumn=120
 
+" set some sensible tab colours
+highlight TabLineFill cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+highlight TabLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+highlight TabLineSel ctermfg=Black ctermbg=Yellow
+
 " ==============================================================
 " General Key Mappings
 " ==============================================================
@@ -150,6 +155,16 @@ nmap <Leader><Leader>v :e ~/.vimrc<cr>
 inoremap <C-a> <C-o>$
 
 " ==============================================================
+" Php Doc Blocks
+" ==============================================================
+
+" set the templates directory
+let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates_snip"
+
+" map <leader>pd to add a document block
+nmap <leader>pd :call pdv#DocumentWithSnip()<cr>
+
+" ==============================================================
 " Vim Fugitive (Git)
 " ==============================================================
 
@@ -161,8 +176,13 @@ highlight GitGutterAdd ctermfg=Green
 highlight GitGutterDelete ctermfg=Red
 highlight GitGutterChange ctermfg=Yellow
 
-" set <leader> g to open a git status in a git repository
+" set some sensible bindings in a git repository
 nmap <leader>g :G<CR>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gb :Gblame<cr>
+nmap <leader>gcv :Gcommit -v<cr>
+nmap <leader>gca :Gcommit -v --amend<cr>
+nmap <leader>gp :Gpush<cr>
 
 " ==============================================================
 " Highlighted Yank
@@ -470,10 +490,25 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+
+
+" ==============================================================
+" Hardtime
+" ==============================================================
+let g:hardtime_default_on = 0
+let g:hardtime_showmsg = 1
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 4
+
 " ==============================================================
 " Vim Debug Options
 " ==============================================================
-let g:vdebug_options = { 'port' : 9002 }
+let g:vdebug_options = {
+  \    'port' : 9002,
+  \    'server' : '127.0.0.1',
+  \    'watch_window_style' : 'expanded',
+  \    'break_on_open' : 0
+  \ }
 
 " ==============================================================
 " Plugins
@@ -489,6 +524,8 @@ Plug 'ryanoasis/vim-devicons'                                       " a selectio
 Plug 'sheerun/vim-polyglot'                                         " syntax highlighting for tonnes of languages
 Plug 'tmsvg/pear-tree'                                              " autoclose tags when writing HTML
 Plug 'machakann/vim-highlightedyank'                                " highlight the yanked area visually
+Plug 'tobyS/pdv', { 'for': 'php' }                                  " add docblocks
+Plug 'tobyS/vmustache'                                              " dockblocks templates
 
 " Project navigation based plugins
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " fuzzy search
@@ -497,6 +534,7 @@ Plug 'jeetsukumaran/vim-buffergator'                                " manage buf
 Plug 'rbgrouleff/bclose.vim'                                        " close buffers easily
 Plug 'kshenoy/vim-signature'                                        " show marks in the gutter that we can jump to
 Plug 'easymotion/vim-easymotion'                                    " jump around easily
+Plug 'takac/vim-hardtime'                                           " Plugin to help you stop repeating the basic movement key
 
 " Git based plugins
 Plug 'airblade/vim-gitgutter'                                       " git changes in the gutter
@@ -512,6 +550,7 @@ Plug 'tpope/vim-commentary'                                         " block comm
 Plug 'mbbill/undotree'                                              " manage recent changes to a file in memory
 Plug 'junegunn/vim-peekaboo'                                        " show contents of registers
 Plug 'jiangmiao/auto-pairs'                                         " auto open and close pairs
+Plug 'SirVer/ultisnips'                                             " install snippets
 
 " Debug
 Plug 'vim-vdebug/vdebug'                                            " debugging with vim
