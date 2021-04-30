@@ -1,11 +1,14 @@
 {
-    "explorer.file.autoReveal": true,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.previewAction.onHover": false,
-    "explorer.width": 50,
-    "explorer.quitOnOpen": true,
-    "explorer.keyMappings": {
-        "<cr>": ["expandable?", "expand", "open"],
-        "v": "open:vsplit"
-    }
+  "intelephense.licenceKey": "ENTER-YOUR-KEY",
+  "explorer.file.autoReveal": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.width": 80,
+  "explorer.quitOnOpen": true,
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  },
+  "vetur.ignoreProjectWarning": true
 }
