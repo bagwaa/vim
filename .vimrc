@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-" Tim Pope
+" Tim Pope is a GOD
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
@@ -8,12 +8,16 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ayu-theme/ayu-vim'
+Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'posva/vim-vue'
-Plug 'pangloss/vim-javascript'
+Plug 'yuezk/vim-js'
 
-" Treesitter for better highlighting
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Snippets
+Plug 'honza/vim-snippets'
+
+" EasyMotion plugin for jumping around
+Plug 'easymotion/vim-easymotion'
 
 " Autopairs enabled
 Plug 'jiangmiao/auto-pairs'
@@ -207,7 +211,9 @@ highlight GitGutterAdd ctermfg=Green
 highlight GitGutterDelete ctermfg=Red
 highlight GitGutterChange ctermfg=Yellow
 
+source ~/.config/nvim/snippets.vim
 source ~/.config/nvim/ale.vim
+source ~/.config/nvim/easymotion.vim
 source ~/.config/nvim/coc.vim
 source ~/.config/nvim/startify.vim
 source ~/.config/nvim/fzf.vim

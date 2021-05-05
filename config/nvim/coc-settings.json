@@ -10,5 +10,6 @@
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
   },
-  "vetur.ignoreProjectWarning": true
+  "vetur.ignoreProjectWarning": true,
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snips"
 }

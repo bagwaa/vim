@@ -19,7 +19,7 @@ let g:ale_php_phpcs_standard = 'PSR2'
 " set the linters we want to use in ale
 let g:ale_linters = {
   \ 'php': ['php', 'phpcs', 'phpmd'],
-  \ 'javascript': ['eslint'],
+  \ 'javascript': ['prettier', 'eslint'],
   \ }
 
 " set the fixers we want to use in ale
