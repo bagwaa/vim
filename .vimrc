@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
-" Tim Pope is a GOD
+
+" Tim Pope
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
@@ -75,13 +76,17 @@ syntax on
 
 " show line numbers
 set number
-set relativenumber
+" set relativenumber
 
 " scroll before we hit the top or bottom
 set scrolloff=8
 
 " set an amazing colour scheme
 colorscheme ayu
+
+" Move visual selection with SHIFT+J/K
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
 
 " store load of commands in the history
 set history=500
@@ -210,6 +215,10 @@ set updatetime=100
 highlight GitGutterAdd ctermfg=Green
 highlight GitGutterDelete ctermfg=Red
 highlight GitGutterChange ctermfg=Yellow
+
+" set comment types for these file types
+autocmd FileType php setlocal commentstring=//\ %s
+autocmd FileType vue setlocal commentstring=//\ %s
 
 source ~/.config/nvim/snippets.vim
 source ~/.config/nvim/ale.vim
